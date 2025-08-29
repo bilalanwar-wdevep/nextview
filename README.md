@@ -88,19 +88,27 @@ nextview/
 ├── public/                 # Static assets
 ├── src/
 │   ├── components/        # React components
-│   │   ├── Header.jsx    # Navigation header
-│   │   ├── Hero.jsx      # Hero section
-│   │   ├── Services.jsx  # Services showcase
-│   │   ├── Portfolio.jsx # Portfolio gallery
-│   │   ├── About.jsx     # Team section
-│   │   ├── Contact.jsx   # Contact form
-│   │   └── Footer.jsx    # Footer section
+│   │   ├── layout/       # Layout components
+│   │   │   ├── Header.jsx    # Navigation header
+│   │   │   └── Footer.jsx    # Footer section
+│   │   └── sections/     # Page sections
+│   │       ├── Hero.jsx      # Hero section
+│   │       ├── Services.jsx  # Services showcase
+│   │       ├── Portfolio.jsx # Portfolio gallery
+│   │       ├── About.jsx     # Team section
+│   │       └── Contact.jsx   # Contact form
 │   ├── assets/           # Images and assets
+│   │   └── images/       # Image files
 │   ├── App.jsx           # Main app component
 │   ├── main.jsx          # App entry point
+│   ├── App.css           # App-specific styles
 │   └── index.css         # Global styles
 ├── tailwind.config.js    # Tailwind configuration
 ├── vite.config.js        # Vite configuration
+├── postcss.config.js     # PostCSS configuration
+├── eslint.config.js      # ESLint configuration
+├── .prettierrc           # Prettier formatting rules
+├── .editorconfig         # Editor consistency settings
 └── package.json          # Dependencies and scripts
 ```
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import logo from '../assets/images/nextview.png'
+import logo from '../../assets/images/nextview.png'
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 

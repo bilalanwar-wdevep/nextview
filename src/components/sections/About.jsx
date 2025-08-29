@@ -1,5 +1,5 @@
 import React from 'react';
-import omar from '../assets/images/omar.png';
+import omar from '../../assets/images/omar.png';
 const About = () => {
   const teamMembers = [
     {

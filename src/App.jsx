@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import About from './components/About';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from './components/layout/Header';
+import Hero from './components/sections/Hero';
+import Services from './components/sections/Services';
+import Portfolio from './components/sections/Portfolio';
+import About from './components/sections/About';
+import Contact from './components/sections/Contact';
+import Footer from './components/layout/Footer';
 import './App.css';
 
 function App() {
