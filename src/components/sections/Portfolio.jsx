@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [currentBgImage, setCurrentBgImage] = useState(0);
 
   const categories = [
     { id: 'all', name: 'All' },
@@ -62,13 +63,54 @@ const Portfolio = () => {
     }
   ];
 
+  // Background images for the section
+  const backgroundImages = [
+    'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1511578314322-379afb476865?w=1200&h=800&fit=crop',
+    'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=800&fit=crop'
+  ];
+
   const filteredItems = activeCategory === 'all' 
     ? portfolioItems 
     : portfolioItems.filter(item => item.category === activeCategory);
 
+  // Change background image every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgImage(prev => (prev + 1) % backgroundImages.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="portfolio" className="py-20 relative overflow-hidden">
+      {/* Background Images with Smooth Transition */}
+      <div className="absolute inset-0">
+        {backgroundImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === currentBgImage ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Blue Transparent Layer */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/80 to-indigo-900/80"></div>
+
+      {/* Content - All existing content remains the same */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 text-blue-300 text-sm font-semibold rounded-full mb-6 animate-fade-in-up">

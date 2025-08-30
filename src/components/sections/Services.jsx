@@ -1,5 +1,5 @@
 import React from 'react';
-
+import fImage from '../../assets/images/f.jpg';
 const Services = () => {
   const services = [
     {
@@ -49,8 +49,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="py-20 bg-white border border-red-800">
+      <div className="max-w-7xl mx-auto px-6" style={{ maxWidth: '1408px' }}>
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full mb-6 animate-fade-in-up">
@@ -191,35 +191,79 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 animate-fade-in-up animation-delay-1000">
-          <div className="relative rounded-3xl overflow-hidden bg-gradient-to-b from-black via-blue-900 to-indigo-900 p-16">
-            {/* Abstract Glossy Shapes */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-gray-800/40 to-gray-900/40 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-gray-800/30 to-gray-900/30 rounded-full blur-3xl animate-pulse animation-delay-2000"></div>
-            <div className="absolute top-1/2 right-0 w-80 h-80 bg-gradient-to-l from-gray-800/20 to-gray-900/20 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
-            
-            {/* Star-like Glows */}
-            <div className="absolute bottom-20 left-20 w-2 h-2 bg-white rounded-full shadow-lg shadow-white/50 animate-pulse"></div>
-            <div className="absolute bottom-32 right-32 w-1.5 h-1.5 bg-white rounded-full shadow-lg shadow-white/50 animate-pulse animation-delay-1000"></div>
-            
-            {/* Content */}
-            <div className="relative z-10 text-center text-white max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-white mb-4">
+        {/* Custom Package Section */}
+        <div className="relative mb-16 rounded-2xl overflow-hidden animate-fade-in-up animation-delay-1000 mt-40 w-full">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 w-full h-full"
+            style={{
+              backgroundImage: `url(${fImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
+          
+          {/* Black Transparent Layer */}
+          <div className="absolute inset-0 bg-black/60"></div>
+          
+          {/* Blue Transparent Layer */}
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/40 to-indigo-900/40"></div>
+          
+          {/* Content */}
+          <div className="relative z-10 p-12 text-center">
+            <div className="max-w-4xl mx-auto">
+              <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Need a Custom Package?
               </h3>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                We offer custom drone photography packages tailored to your unique requirements. 
-                Let's discuss your vision and create the perfect aerial experience.
+              <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                Let us create a tailored drone photography solution that perfectly fits your unique project requirements. 
+                From concept to final delivery, we'll work closely with you to bring your vision to life.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-white text-black font-bold text-lg px-10 py-4 rounded-2xl hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-white/20">
-                  Get Custom Quote
-                </button>
-                <button className="bg-transparent hover:bg-white/10 text-white font-bold text-lg px-10 py-4 rounded-2xl border-2 border-white/30 hover:border-white/50 transition-all duration-300">
-                  Schedule Consultation
-                </button>
+              
+              {/* Features */}
+              <div className="grid grid-cols-12 gap-6 mb-8">
+                <div className="col-span-4 text-center">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-400/50">
+                    <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Personalized Planning</h4>
+                  <p className="text-sm text-gray-300">Custom strategy tailored to your specific needs</p>
+                </div>
+                
+                <div className="col-span-4 text-center">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-400/50">
+                    <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">Flexible Scheduling</h4>
+                  <p className="text-sm text-gray-300">Work around your timeline and requirements</p>
+                </div>
+                
+                <div className="col-span-4 text-center">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-blue-400/50">
+                    <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  </div>
+                  <h4 className="text-lg font-semibold text-white mb-2">24/7 Support</h4>
+                  <p className="text-sm text-gray-300">Round-the-clock assistance for your project</p>
+                </div>
               </div>
+              
+              {/* CTA Button */}
+              <button className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-2xl hover:shadow-blue-500/25 transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                <span className="relative z-10 inline-flex items-center">
+                  Get Custom Quote
+                  <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </button>
             </div>
           </div>
         </div>

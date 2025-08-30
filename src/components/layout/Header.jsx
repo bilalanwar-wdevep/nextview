@@ -26,7 +26,7 @@ const Header = () => {
           <a href="#home" className="text-blue-600 px-3 py-2 rounded transition-all duration-200 hover:bg-blue-50 hover:text-blue-700">Home</a>
           <a href="#services" className="text-gray-700 px-3 py-2 rounded transition-all duration-200 hover:bg-blue-50 hover:text-blue-600">Services</a>
           <a href="#portfolio" className="text-gray-700 px-3 py-2 rounded transition-all duration-200 hover:bg-blue-50 hover:text-blue-600">Portfolio</a>
-
+          <a href="#team" className="text-gray-700 px-3 py-2 rounded transition-all duration-200 hover:bg-blue-50 hover:text-blue-600">Team</a>
           <a href="#about" className="text-gray-700 px-3 py-2 rounded transition-all duration-200 hover:bg-blue-50 hover:text-blue-600">About</a>
           <a href="#contact" className="text-gray-700 px-3 py-2 rounded transition-all duration-200 hover:bg-blue-50 hover:text-blue-600">Contact</a>
         </nav>
